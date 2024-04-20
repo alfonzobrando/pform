@@ -43,6 +43,7 @@ class ComentarioController extends AbstractController
         return $this->render('comentario/new.html.twig', [
             'comentario' => $comentario,
             'form' => $form,
+            'idArticulo' => $idArticulo->getId()
         ]);
     }
 
