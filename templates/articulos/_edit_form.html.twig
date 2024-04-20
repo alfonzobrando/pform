@@ -1,0 +1,5 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-primary">{{ button_label|default('Guardar cambios') }}</button>
+    <a href="/" class="btn btn-secondary">{{ button_label|default('Cancelar') }}</a>
+{{ form_end(form) }}

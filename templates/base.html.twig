@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      {% block title %}
+
+      {% endblock %}
+    </title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" />
+
+  </head>
+  <body>
+    <header>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="/" class="navbar-brand d-flex align-items-center"><strong>Alfonzo Silva - Blog</strong></a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      {% block body %}
+
+      {% endblock %}
+    </main>
+
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+  </body>
+</html>

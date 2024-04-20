@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articulos{% endblock %}
+
+{% block body %}
+
+    <div style="margin: 100px;">
+        <h1>{{ articulo.titulo }}</h1>
+        <small>Fecha de publicación:  {{ articulo.creado ? articulo.creado|date('Y-m-d') : '' }}  /  {{ articulo.categoria }}</small>
+        <p class="lead" style="margin: 50px;">{{ articulo.contenido | raw }}</p>
+        <p><em>{{ articulo.autor }}</em></p>
+
+        <br>
+        <div class="mt-50">
+            <a href="{{ path('app_articulos_edit', {'id': articulo.id}) }}" class="btn btn-primary" >Editar artículo</a>
+        </div>
+
+    <div style="margin-top:130px;">
+        <a href="{{ path('app_comentario_new', {'idArticulo': articulo.id }) }}">Añadir un comentario</a>
+    </div>
+
+
+    <div>
+        {% for comentario in comentarios %}
+            <hr>
+            <div>Usuario ha comentado:</div>
+            <div>{{ comentario.contenido }}</div>
+            <div>
+                <a href="{{ path('app_comentario_edit', {'idArticulo': articulo.id, 'idComentario': comentario.id  }) }}" class="btn btn-success" >Editar comentario</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    </div>
+    
+{% endblock %}
